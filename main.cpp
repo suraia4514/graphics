@@ -30,6 +30,26 @@ bool flagScale=false;
 
     glPopMatrix();
  }
+
+
+  void moon(){
+  ///sun///
+    glPushMatrix();
+    float theta;
+    glColor3d(1.0, 1.0, 1.0);
+    glTranslatef(30.0, 7.0, 0);
+    glBegin(GL_POLYGON);
+    for(int i=0;i<360;i++)
+    {
+        theta=i*31416/180;
+        glVertex2f(1*cos(theta),1*sin(theta));
+    }
+    glEnd();
+
+
+    glPopMatrix();
+ }
+
 void circlewind(){
 //circle//
     glPushMatrix();
@@ -1187,7 +1207,7 @@ glPopMatrix();
 
     ///sky///
     glBegin(GL_QUADS);
-    glColor4f(0.0f, 0.0f, 1.0f, 0.0f);
+    glColor4f(0.0f, 0.0f, 0.0f, 0.0f);
 
     glVertex2f(38.0,14.0);
     glVertex2f(38.0,3.0);
@@ -1198,7 +1218,7 @@ glPopMatrix();
     glEnd();
     glPushMatrix();
     glTranslatef(txval,0,0);
-sun();
+moon();
 glPopMatrix();
 ///cloud 1///
     glPushMatrix();
@@ -1867,7 +1887,7 @@ glPopMatrix();
 
 ///windmill structure///
     glBegin(GL_POLYGON);// Draw a Red 1x1 Square centered at origin
-    glColor3ub(192,192,192);
+    glColor3ub(152,192,192);
     //glColor3ub(0,206,209);
 
     glVertex2f(33.0f,2.0f);
